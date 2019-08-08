@@ -1,0 +1,1 @@
+# synergy_way_test
