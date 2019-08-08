@@ -1,0 +1,100 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="jumbotron">
+ <div class="container">
+
+   <!-- HEADER SECTION CONTAINER -->
+    <div class="main_btns_users">
+
+      <!-- Add user button -->
+        <div class="header add_user">
+          <a href="{{ url_for('users.add_new_user') }}"><img class="control_btn" src="{{ url_for('static', filename='images/plus-4-128.png' )}}" alt='add_user'></a>
+        </div>
+
+        <!-- Search section -->
+        <div class="header searchbar">
+          <form id="search-form" method="post">
+              <div class="search">
+                <input id="searchOne" type="text" onclick="searchResults()" name="search" class="round" />
+                  <a href="{{ url_for('users.all_users', search='Pa') }}">
+                      <input id="searchTwo" type="submit" onclick="searchResults()" class="corner" value="" /></a>
+              </div>
+          </form>
+        </div>
+
+      <!-- Change pagination dropdown -->
+        <div class="header_pagin_offset">
+          <form class="" action="" method="post">
+            <select class="browser-default custom-select" id="pagination", name="per_page_name" onchange="this.form.submit()">
+              <option value="10"><a href="{{ url_for('users.all_users', per_page=15) }}">10</a></option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </form>
+        </div>
+    </div>
+
+
+  <!-- Name of the page -->
+    <h1 class="pagename">Users</h1>
+
+    <div class="container">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">E-MAIL</th>
+            <th scope="col">STATUS</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in user_list %}
+            <tr>
+              <td>{{ user[1] }}</td>
+              <td>{{ user[2] }}</td>
+              <td>{{ user[3] }}</td>
+              <td>
+                <div class="add_btn">
+                <a href="{{ url_for('users.change_user', user_id=user[0]) }}"><img src="{{ url_for('static', filename='images/edit.png' )}}" alt="edit"></a>
+                <a href="{{ url_for('users.delete_user', user_id=user[0]) }}"><img src="{{ url_for('static', filename='images/delete.png' )}}" alt="delete"></a>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  {{ pagination.links }}
+
+    <!-- Modal -->
+     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="deleteModalLabel">Delete user?</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
+
+  </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $('#pagination').change(function() {
+            $('form').submit();
+        });
+    });
+</script>
+
+{% endblock content %}

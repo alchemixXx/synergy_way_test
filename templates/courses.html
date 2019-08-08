@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="main_btns_users">
+
+      <!-- Main header -->
+        <h1 class="header pagename">Courses</h1>
+
+    </div>
+
+    <div class="container_2">
+
+
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">CODE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for course in course_list %}
+    <tr>
+      <!-- <th scope="row">1</th> -->
+      <td>{{ course[1] }}</td>
+      <td>{{ course[2] }}</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+    </div>
+
+         </div>
+       </div>
+     </div>
+
+{% endblock content %}

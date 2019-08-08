@@ -1,0 +1,185 @@
+/* Font for logo */
+.font {
+    font-family: 'Beth Ellen', cursive;
+}
+
+/* styles for main control pannel on Users and Courses pages */
+.control_btn, img {
+    max-width: 35px;
+    border-radius: 50%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.form-control {
+    background-color: transparent;
+}
+
+
+.header {
+    display: inline-flex;
+}
+
+.round {
+    width: 100%;
+    border-radius: 25px;
+    border: 2px #E5E4E4 solid;
+    padding: 5px 5px 5px 25px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    margin-left: 5px;
+    text-indent: 1em;
+    color: #14b8b2;
+}
+
+.corner {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    height: 36px;
+    width: 36px;
+    z-index: 10;
+    border-radius: 18px;
+    border: 0px #E5E4E4 solid;
+    background: url("images/active-search-2-128.png"); /* Set the bg image here. with "no-repeat" */
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 34px;
+}
+
+.main_btns_users {
+    padding: 20px;
+}
+
+.search {
+    position: relative;
+    width: 190px;
+    height: 30px;
+}
+
+.searchbar {
+    float: left;
+}
+
+.add_user {
+    padding: 7px;
+    float: left;
+}
+
+.header_pagin_offset {
+    float: right;
+}
+
+.custom-select {
+    margin: 5px;
+    border-radius: 55px;
+    border: 2px #E5E4E4 solid;
+}
+
+.pagename {
+    text-align: center;
+    max-width: 50%;
+    margin-left: 25%;
+    margin-top: -25px;
+}
+
+
+/* Styles for successful message */
+.message {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: white;
+    color: green;
+    border: solid 2px green;
+    display: none;
+}
+
+
+/* Pagination style rules */
+.pagination {
+    display: -ms-flexbox;
+    justify-content: center;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+.page-link {
+
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin: 10px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 2px #E5E4E4 solid;
+    border-radius: 35px;
+    width: 40px;
+}
+
+.center {
+    position: center;
+}
+
+
+.page-item:first-child .page-link {
+    border-radius: 30px;
+}
+
+.page-item:last-child .page-link {
+    border-radius: 30px;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #b3b3b3;
+    border-color: #b3b3b3;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #e6e6e6;
+    border-color: #dee2e6;
+}
+
+
+/* Style rules for flask-forms */
+.form-group {
+  max-width: 60%;
+  margin-left: 20%;
+}
+
+.form-group * {
+  max-width: 90%;
+  margin-left: 5%;
+  border-radius: 30px;
+}
+
+
+.form-control {
+  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
+}
+
+
+
+/* Sryle rules for apply button in forms */
+.btn {
+  display: flex;
+  margin-left: 75%;
+  background-color: #21cc6b;
+  color: white;
+  max-width: 120px;
+  border: 0px solid transparent;
+  text-shadow: 1px 1px 2px pink;
+}
